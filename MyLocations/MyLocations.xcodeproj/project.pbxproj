@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		343069891E8ADC29003B5A80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343069881E8ADC29003B5A80 /* AppDelegate.swift */; };
-		3430698B1E8ADC29003B5A80 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3430698A1E8ADC29003B5A80 /* FirstViewController.swift */; };
+		3430698B1E8ADC29003B5A80 /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3430698A1E8ADC29003B5A80 /* CurrentLocationViewController.swift */; };
 		3430698D1E8ADC29003B5A80 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3430698C1E8ADC29003B5A80 /* SecondViewController.swift */; };
 		343069901E8ADC29003B5A80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3430698E1E8ADC29003B5A80 /* Main.storyboard */; };
 		343069921E8ADC29003B5A80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 343069911E8ADC29003B5A80 /* Assets.xcassets */; };
@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		343069851E8ADC29003B5A80 /* MyLocations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLocations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		343069881E8ADC29003B5A80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3430698A1E8ADC29003B5A80 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		3430698A1E8ADC29003B5A80 /* CurrentLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewController.swift; sourceTree = "<group>"; };
 		3430698C1E8ADC29003B5A80 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		3430698F1E8ADC29003B5A80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		343069911E8ADC29003B5A80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				343069881E8ADC29003B5A80 /* AppDelegate.swift */,
-				3430698A1E8ADC29003B5A80 /* FirstViewController.swift */,
+				3430698A1E8ADC29003B5A80 /* CurrentLocationViewController.swift */,
 				3430698C1E8ADC29003B5A80 /* SecondViewController.swift */,
 				3430698E1E8ADC29003B5A80 /* Main.storyboard */,
 				343069911E8ADC29003B5A80 /* Assets.xcassets */,
@@ -77,6 +77,7 @@
 				343069811E8ADC26003B5A80 /* Sources */,
 				343069821E8ADC26003B5A80 /* Frameworks */,
 				343069831E8ADC26003B5A80 /* Resources */,
+				3430699C1E8ADD96003B5A80 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -135,6 +136,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3430699C1E8ADD96003B5A80 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\nexit 1\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		343069811E8ADC26003B5A80 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -142,7 +159,7 @@
 			files = (
 				3430698D1E8ADC29003B5A80 /* SecondViewController.swift in Sources */,
 				343069891E8ADC29003B5A80 /* AppDelegate.swift in Sources */,
-				3430698B1E8ADC29003B5A80 /* FirstViewController.swift in Sources */,
+				3430698B1E8ADC29003B5A80 /* CurrentLocationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
