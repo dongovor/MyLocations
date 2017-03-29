@@ -5,6 +5,7 @@
 //  Created by Dmitry Cherkasov on 3/28/17.
 //  Copyright © 2017 Dmitry Cherkasov. All rights reserved.
 //
+// swiftlint:disable force_cast
 
 import UIKit
 import CoreLocation
@@ -33,9 +34,8 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             showLocationServicesDeniedAlert()
             return
         }
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        locationManager.startUpdatingLocation()
+        startLocationManager()
+        updateLabels()
     }
 
     override func viewDidLoad() {
@@ -63,6 +63,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         let newLocation = locations.last!
         print("didUpdateLocations \(newLocation)")
         location = newLocation
+        lastLocationError = nil
         updateLabels()
     }
 
@@ -84,10 +85,11 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             longitudeLabel.text = " "
             addressLabel.text = " "
             tagButton.isHidden = true
-            
+
             let statusMessage: String
             if let error = lastLocationError as? NSError {
-                if error.domain == kCLErrorDomain && error.code == CLError.denied.rawValue {
+                if error.domain == kCLErrorDomain &&
+                    error.code == CLError.denied.rawValue {
                     statusMessage = "Location Services Disabled"
                 } else {
                     statusMessage = "Error Getting Location"
@@ -97,12 +99,21 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             } else if updatingLocation {
                 statusMessage = "Searching..."
             } else {
-                messageLabel.text = "Tap 'Get My Location' to Start"
+                statusMessage = "Tap 'Get My Location' to Start"
             }
             messageLabel.text = statusMessage
         }
     }
-    
+
+    func startLocationManager() {
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+            updatingLocation = true
+        }
+    }
+
     func stopLocationManager() {
         if updatingLocation {
             locationManager.stopUpdatingLocation()
