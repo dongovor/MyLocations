@@ -113,7 +113,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
                 performingReverseGeocoding = true
                 geocoder.reverseGeocodeLocation(newLocation, completionHandler: {
                     placemarks, error in
-                    print("*** Found placemarks: \(placemarks), error: \(error)")
+//                    print("*** Found placemarks: \(placemarks), error: \(error)")
                     self.lastGeocodingError = error
                     if error == nil, let p = placemarks, !p.isEmpty {
                         self.placemark = p.last!
@@ -165,7 +165,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             tagButton.isHidden = true
 
             let statusMessage: String
-            if let error = lastLocationError as? NSError {
+            if let error = lastLocationError as NSError? {
                 if error.domain == kCLErrorDomain &&
                     error.code == CLError.denied.rawValue {
                     statusMessage = "Location Services Disabled"
