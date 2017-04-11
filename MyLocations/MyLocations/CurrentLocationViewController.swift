@@ -225,7 +225,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             timer.invalidate()
         }
     }
-    
+
     func didTimeOut() {
         print("*** Time out")
         if location == nil {
@@ -233,6 +233,15 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             lastLocationError = NSError(domain: "MyLocationsErrorDomain", code: 1, userInfo: nil)
             updateLabels()
             configureGetButton()
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "TagLocation" {
+            let navigationController = segue.destination as! UINavigationController
+            let controller = navigationController.topViewController as! LocationDetailsViewController
+            controller.coordinate = location!.coordinate
+            controller.placemark = placemark
         }
     }
 }
