@@ -11,7 +11,18 @@ import UIKit
 
 class CategoryPickerViewController: UITableViewController {
     var selectedCategoryName = ""
-    let categories = ["No Category", "AppStore", "Bar", "Bookstore", "Club", "Grocery Store", "Historic Building", "House", "Icecream Vendor", "Landmark", "Park"]
+    let categories = ["No Category",
+                      "AppStore",
+                      "Bar",
+                      "Bookstore",
+                      "Club",
+                      "Grocery Store",
+                      "Historic Building",
+                      "House",
+                      "Icecream Vendor",
+                      "Landmark",
+                      "Park"]
+
     var selectedIndexPath = IndexPath()
 
     override func viewDidLoad() {
@@ -54,15 +65,19 @@ class CategoryPickerViewController: UITableViewController {
 
     // MARK: - UITableViewDelegate
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView,
+                            didSelectRowAt indexPath: IndexPath) {
         if indexPath.row != selectedIndexPath.row {
             if let newCell = tableView.cellForRow(at: indexPath) {
                 newCell.accessoryType = .checkmark
             }
+
             if let oldCell = tableView.cellForRow(at: selectedIndexPath) {
                 oldCell.accessoryType = .none
             }
+
             selectedIndexPath = indexPath
         }
     }
+
 }

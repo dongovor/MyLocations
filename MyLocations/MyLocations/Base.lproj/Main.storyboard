@@ -115,7 +115,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="(Description goes here)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MmK-Zn-gYp">
-                                                    <rect key="frame" x="14" y="10" width="291" height="68"/>
+                                                    <rect key="frame" x="13" y="10" width="291" height="68"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -148,7 +148,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="nZN-Rh-wkR" kind="show" id="URV-H0-UnU"/>
+                                            <segue destination="nZN-Rh-wkR" kind="show" identifier="PickCategory" id="URV-H0-UnU"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
