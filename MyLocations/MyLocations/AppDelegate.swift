@@ -4,6 +4,7 @@
 //
 //  Created by Dmitry Cherkasov on 3/28/17.
 //  Copyright © 2017 Dmitry Cherkasov. All rights reserved.
+//  swiftlint:disable force_cast
 //
 
 import UIKit
@@ -33,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let currentLocationViewController = tabBarViewControllers[0] as! CurrentLocationViewController
             currentLocationViewController.managedObjectContext = managedObjectContext
         }
+        print(applicationDocumentsDirectory)
         return true
     }
 

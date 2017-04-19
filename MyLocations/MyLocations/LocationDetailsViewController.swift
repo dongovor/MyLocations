@@ -24,6 +24,7 @@ class LocationDetailsViewController: UITableViewController {
     var placemark: CLPlacemark?
     var categoryName = "No Category"
     var managedObjectContext: NSManagedObjectContext!
+    var date = Date()
     //---------
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var categoryLabel: UILabel!
