@@ -20,6 +20,7 @@
 		3492D6091E9D682200EB107D /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492D6081E9D682200EB107D /* CategoryPickerViewController.swift */; };
 		3492D60B1E9EB4C400EB107D /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492D60A1E9EB4C400EB107D /* HudView.swift */; };
 		3492D60D1E9EC22D00EB107D /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492D60C1E9EC22D00EB107D /* Functions.swift */; };
+		34C31CC51EA9B05600DB5D87 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C31CC41EA9B05600DB5D87 /* LocationsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		3492D6081E9D682200EB107D /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
 		3492D60A1E9EB4C400EB107D /* HudView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
 		3492D60C1E9EC22D00EB107D /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		34C31CC41EA9B05600DB5D87 /* LocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				3492D6081E9D682200EB107D /* CategoryPickerViewController.swift */,
 				3492D60A1E9EB4C400EB107D /* HudView.swift */,
 				3492D60C1E9EC22D00EB107D /* Functions.swift */,
+				34C31CC41EA9B05600DB5D87 /* LocationsViewController.swift */,
 				343EA75C1EA4D5CE00EF4344 /* DataModel.xcdatamodeld */,
 				3430698E1E8ADC29003B5A80 /* Main.storyboard */,
 				343069911E8ADC29003B5A80 /* Assets.xcassets */,
@@ -182,6 +185,7 @@
 				343EA75E1EA4D5CE00EF4344 /* DataModel.xcdatamodeld in Sources */,
 				3430698D1E8ADC29003B5A80 /* SecondViewController.swift in Sources */,
 				3492D60B1E9EB4C400EB107D /* HudView.swift in Sources */,
+				34C31CC51EA9B05600DB5D87 /* LocationsViewController.swift in Sources */,
 				343EA7621EA4D8F600EF4344 /* Location+CoreDataProperties.swift in Sources */,
 				3492D60D1E9EC22D00EB107D /* Functions.swift in Sources */,
 				343069891E8ADC29003B5A80 /* AppDelegate.swift in Sources */,
