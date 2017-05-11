@@ -20,7 +20,7 @@ class MapViewController: UIViewController {
             NotificationCenter.default.addObserver(
                             forName: Notification.Name.NSManagedObjectContextObjectsDidChange,
                             object: managedObjectContext,
-                            queue: OperationQueue.main) { notification in
+                            queue: OperationQueue.main) { _ in
                                 if self.isViewLoaded {
                                 self.updateLocations()
                 }
@@ -85,7 +85,7 @@ class MapViewController: UIViewController {
     func showLocationDetails(_ sender: UIButton) {
         performSegue(withIdentifier: "EditLocation", sender: sender)
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "EditLocation" {
             let navigationController = segue.destination as! UINavigationController
@@ -124,5 +124,11 @@ extension MapViewController: MKMapViewDelegate {
             }
         }
         return annotationView
+    }
+}
+
+extension MapViewController: UINavigationBarDelegate {
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+        return .topAttached
     }
 }
