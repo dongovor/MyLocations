@@ -58,6 +58,7 @@ class LocationDetailsViewController: UITableViewController {
         } else {
             hudView.text = "Tagged"
             location = Location(context: managedObjectContext)
+            location.photoID = nil
         }
         location.locationDescription = descriptionTextView.text
         location.category = categoryName
@@ -106,6 +107,11 @@ class LocationDetailsViewController: UITableViewController {
 
         if let location = locationToEdit {
             title = "Edit Location"
+            if location.hasPhoto {
+                if let theImage = location.photoImage {
+                    show(image: theImage)
+                }
+            }
         }
         if let placemark = placemark {
             addressLabel.text = string(from: placemark)
@@ -162,14 +168,14 @@ class LocationDetailsViewController: UITableViewController {
     }
 
     func string(from placemark: CLPlacemark) -> String {
-        var text = " "
-        if let s = placemark.subThoroughfare { text += s + " " }
-        if let s = placemark.thoroughfare { text += s + ", " }
-        if let s = placemark.locality { text += s + ", " }
-        if let s = placemark.administrativeArea { text += s + " " }
-        if let s = placemark.postalCode { text += s + ", " }
-        if let s = placemark.country { text += s }
-        return text
+        var line = ""
+        line.add(text: placemark.subThoroughfare)
+        line.add(text: placemark.thoroughfare, separatedBy: " ")
+        line.add(text: placemark.locality, separatedBy: ", ")
+        line.add(text: placemark.administrativeArea, separatedBy: ", ")
+        line.add(text: placemark.postalCode, separatedBy: " ")
+        line.add(text: placemark.country, separatedBy: ", ")
+        return line
     }
 
     func format(date: Date) -> String {
@@ -212,10 +218,11 @@ class LocationDetailsViewController: UITableViewController {
 
 extension LocationDetailsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func takePhotoWithCamera() {
-        let imagePicker = UIImagePickerController()
+        let imagePicker = MyImagePickerController()
         imagePicker.sourceType = .camera
         imagePicker.delegate = self
         imagePicker.allowsEditing = true
+        imagePicker.view.tintColor = view.tintColor
         present(imagePicker, animated: true, completion: nil)
     }
 
@@ -233,10 +240,11 @@ extension LocationDetailsViewController: UIImagePickerControllerDelegate, UINavi
     }
 
     func choosePhotoFromLibrary() {
-        let imagePicker = UIImagePickerController()
+        let imagePicker = MyImagePickerController()
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
         imagePicker.allowsEditing = true
+        imagePicker.view.tintColor = view.tintColor
         present(imagePicker, animated: true, completion: nil)
     }
 
