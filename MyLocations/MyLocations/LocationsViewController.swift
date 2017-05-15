@@ -83,7 +83,7 @@ class LocationsViewController: UITableViewController {
             }
         }
     }
-    
+
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView {
         let labelRect = CGRect(x: 15, y: tableView.sectionHeaderHeight - 14, width: 300, height: 14)
         let label = UILabel(frame: labelRect)

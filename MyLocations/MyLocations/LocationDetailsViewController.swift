@@ -175,7 +175,7 @@ class LocationDetailsViewController: UITableViewController {
             pickPhoto()
         }
     }
-    
+
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell .backgroundColor = UIColor.black
         if let textLabel = cell.textLabel {
@@ -189,7 +189,7 @@ class LocationDetailsViewController: UITableViewController {
         let selectionView = UIView(frame: CGRect.zero)
         selectionView.backgroundColor = UIColor(white: 1.0, alpha: 0.2)
         cell.selectedBackgroundView = selectionView
-        
+
         if indexPath.row == 2 {
             let addressLabel = cell.viewWithTag(100) as! UILabel
             addressLabel.textColor = UIColor.white

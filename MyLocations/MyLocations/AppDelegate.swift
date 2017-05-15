@@ -91,7 +91,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return rootViewController
         }
     }
-    
+
     func customizeAppearance() {
         UINavigationBar.appearance().barTintColor = UIColor.black
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
